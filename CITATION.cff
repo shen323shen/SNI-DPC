@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+title: "SNI-DPC: A Screened Natural-Neighbor Interaction Field for Automatic Density Peaks Clustering"
+type: software
+message: "If you use this software, please cite the associated SNI-DPC manuscript and this repository."
+authors:
+  - family-names: Zhang
+    given-names: Yumou
+  - family-names: Yang
+    given-names: Lijun
+    email: ylijun@swun.edu.cn
+version: 1.0.0
+date-released: 2026-08-05
+license: BSD-3-Clause
+repository-code: "https://github.com/shen323shen/SNI-DPC"
+keywords:
+  - clustering
+  - density peaks clustering
+  - natural neighbors
+  - unsupervised learning
+
