@@ -1,38 +1,38 @@
 # Reproducibility guide
 
-## Environment
+## Environment and software version
 
-The submitted experiments used Python 3.10.19 with NumPy 2.2.5, SciPy 1.15.3,
-scikit-learn 1.7.2, pandas 2.3.3, and Matplotlib 3.10.7. The exact package
-records are listed in `requirements-experiments.txt`. The public clustering API
-needs only NumPy and scikit-learn.
+The public API is SNI-DPC algorithm `v10_0.65` (Python package version
+`10.0.65`). The environment recorded in `requirements-experiments.txt` is
+Python 3.10.19, NumPy 2.2.5, SciPy 1.15.3, scikit-learn 1.7.2, pandas
+2.3.3 and Matplotlib 3.10.7. The public API needs only NumPy and
+scikit-learn; historical summary reproduction also requires SciPy and pandas.
+An environment listing does not by itself establish identical hardware or
+execution settings for every archived benchmark record.
 
 ## Reproduction levels
 
-1. **Smoke run:** install the package and run `python scripts/run_example.py`.
-2. **Regression run:** execute `python -m unittest discover -v`. This compares
-   the public API with the frozen publication implementation on the deterministic
-   28-point input.
-3. **Table audit:** run `python scripts/reproduce_statistics.py`. This checks
-   the formal table, recomputes six-method means, and recomputes 15 paired
-   one-sided Wilcoxon tests with Holm correction.
-4. **Full experiment rerun:** obtain the source data listed in the manuscript
-   and Supplementary Material, record the exact files and preprocessing in a
-   manifest, and use the frozen implementation. This level is intentionally not
-   part of the default CI workflow because some inherited dataset versions are
-   not recoverable from current public package metadata.
+1. **Example:** install the package and run `python scripts/run_example.py`.
+2. **Equivalence:** run `python -m unittest discover -v`; the public v10_0.65
+   estimator is compared pointwise with its checked reference on several
+   deterministic inputs.
+3. **Record audit:** run `python scripts/verify_release_results.py`. It checks
+   the 29+10 dataset coverage, six methods, status and metric/count fields;
+   run `python scripts/verify_checksums.py` to check the recorded canonical-LF
+   content hashes on any platform. It does not
+   rerun experiments or recompute quality metrics from prediction labels.
+4. **Full rerun:** acquire the executed input versions and experiment
+   manifests, reproduce the recorded preprocessing, comparator implementations
+   and stopping rules, then run the complete comparison. Input datasets and
+   third-party baseline sources are not bundled here.
 
-## What is guaranteed
+For the **historical v9.5** 21-dataset comparison only, run
+`python scripts/reproduce_statistics.py` to regenerate its mean metrics and
+paired Wilcoxon/Holm summaries. Those statistics are not tests of the current
+39-dataset six-method results.
 
-- SNI-DPC does not receive the true number of clusters in the public API.
-- The worked example output is deterministic and regression-tested.
-- The formal CSV and frozen implementation have immutable SHA-256 values.
-- The statistical script does not modify the formal table.
-
-## What is not claimed
-
-Runtime values describe the evaluated implementation and workstation. The
-eight real-world datasets are a bounded external-validity study, not a claim of
-universal real-data superiority. A completed single-cluster output with zero
-NMI/ARI is a valid result unless the run status proves failure.
-
+The SNI-DPC API takes a numeric matrix, not reference labels or `K_true`.
+Its internal constants are fixed, so automatic cluster-count selection is not
+the same as having no parameters. Timeout rows have no imputed metrics.
+Wall-clock time and peak RSS reflect recorded runs rather than
+hardware-independent algorithm properties.

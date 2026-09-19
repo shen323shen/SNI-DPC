@@ -7,7 +7,7 @@ from typing import Any
 import numpy as np
 from numpy.typing import ArrayLike, NDArray
 
-from ._core import mng_dpc
+from ._core_v10 import mng_dpc
 
 
 class SNIDPC:
@@ -49,7 +49,7 @@ def fit_predict(
     *,
     return_diagnostics: bool = False,
 ) -> NDArray[np.int_] | tuple[NDArray[np.int_], dict[str, Any]]:
-    """Cluster a numeric matrix with the frozen SNI-DPC method."""
+    """Cluster a numeric matrix with the fixed SNI-DPC v10_0.65 method."""
 
     estimator = SNIDPC().fit(X)
     labels = estimator.labels_.copy()
@@ -69,4 +69,3 @@ def _validated_data(X: ArrayLike) -> NDArray[np.float64]:
     if not np.isfinite(data).all():
         raise ValueError("X must not contain NaN or infinite values.")
     return np.ascontiguousarray(data, dtype=float)
-

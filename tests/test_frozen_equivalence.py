@@ -12,7 +12,7 @@ from sni_dpc import SNIDPC
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "examples" / "data" / "worked_example_28.csv"
-FROZEN = ROOT / "frozen" / "SNI_DPC_v9_5_publication.py"
+FROZEN = ROOT / "frozen" / "SNI_DPC_v10_0_65.py"
 
 
 def load_frozen_module():
@@ -40,3 +40,19 @@ class FrozenEquivalenceTests(unittest.TestCase):
             public.low_confidence_indices_,
             np.asarray(frozen_info["low_indices"], dtype=int),
         )
+
+    def test_v10_065_matches_frozen_on_multiple_inputs(self) -> None:
+        rng = np.random.default_rng(42)
+        x = np.vstack(
+            [
+                rng.normal([-3.0, 0.0], 0.35, (24, 2)),
+                rng.normal([0.0, 0.0], 0.35, (24, 2)),
+                rng.normal([3.0, 0.0], 0.35, (24, 2)),
+            ]
+        )
+        for data in (x, np.vstack([x[:16], x[24:40]])):
+            with self.subTest(n_samples=len(data)):
+                frozen_labels, frozen_info = load_frozen_module().mng_dpc(data)
+                public = SNIDPC().fit(data)
+                np.testing.assert_array_equal(public.labels_, frozen_labels)
+                self.assertEqual(public.n_clusters_, frozen_info["num_clusters"])

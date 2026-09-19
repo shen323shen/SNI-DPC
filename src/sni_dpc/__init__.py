@@ -3,4 +3,4 @@
 from .estimator import SNIDPC, fit_predict
 
 __all__ = ["SNIDPC", "fit_predict"]
-__version__ = "1.0.0"
+__version__ = "10.0.65"

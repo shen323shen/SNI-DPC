@@ -20,5 +20,10 @@ jobs:
         run: python -m pip install --upgrade pip && python -m pip install ".[test,experiments]"
       - name: Run example
         run: python scripts/run_example.py
+      - name: Verify v10 core and published result records
+        run: |
+          python scripts/build_v10_core.py --check
+          python scripts/verify_checksums.py
+          python scripts/verify_release_results.py
       - name: Run regression tests
         run: python -m unittest discover -v

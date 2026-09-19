@@ -1,4 +1,4 @@
-"""Recompute the submitted 21-dataset summary and paired tests."""
+"""Recompute the historical v9.5 21-dataset summary and paired tests."""
 
 from __future__ import annotations
 
@@ -126,4 +126,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

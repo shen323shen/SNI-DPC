@@ -8,8 +8,8 @@ authors:
   - family-names: Yang
     given-names: Lijun
     email: ylijun@swun.edu.cn
-version: 1.0.0
-date-released: 2026-08-05
+version: 10.0.65
+date-released: 2026-09-19
 license: BSD-3-Clause
 repository-code: "https://github.com/shen323shen/SNI-DPC"
 keywords:
@@ -17,4 +17,3 @@ keywords:
   - density peaks clustering
   - natural neighbors
   - unsupervised learning
-
