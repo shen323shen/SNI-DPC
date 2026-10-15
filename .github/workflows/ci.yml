@@ -27,3 +27,5 @@ jobs:
           python scripts/verify_release_results.py
       - name: Run regression tests
         run: python -m unittest discover -v
+      - name: Reproduce current score-level statistics
+        run: python scripts/reproduce_current_statistics.py

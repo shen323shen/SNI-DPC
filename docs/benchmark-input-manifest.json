@@ -1,0 +1,550 @@
+{
+  "schema_version": "1.0",
+  "record_date": "2026-10-15",
+  "scope": "Identity metadata for 39 archived numeric adapter-input CSV files; no benchmark inputs or prediction labels are distributed.",
+  "hash_semantics": "adapter_input_csv_sha256 is a raw-byte SHA-256 of the archived numeric CSV before any adapter-side normalization. It is not the upstream-download checksum, a hash of the post-adapter in-memory feature matrix, or a guarantee that a same-name download is byte-identical.",
+  "format_note": "Archived numeric tables contain d feature columns followed by one reference-label column. Headers/serialization are part of the archived bytes. Reference labels are separated before clustering. See acquisition-and-protocol.md for preprocessing, evaluation and unresolved mappings.",
+  "datasets": [
+    {
+      "dataset": "2d-10c",
+      "panel": "formal21",
+      "n": 2990,
+      "d": 2,
+      "reference_nonnoise_clusters": 9,
+      "adapter_input_csv_sha256": "1a4cb5e4d6be52b038c5703cb5f11d9d864d37a26b99b3f01c73a50c2ed878c9",
+      "source": {
+        "description": "Handl--Knowles generator family; Garcia-Piquer et al. (2015)",
+        "url": "https://github.com/deric/clustering-benchmark/tree/5a1e33ddf92e9ab6331f0c37c9589b4ff4818925/src/main/resources/datasets/artificial",
+        "identity_status": "family or artifact correspondence; use acquisition notes and archived CSV hash, not the name alone"
+      }
+    },
+    {
+      "dataset": "DS-577",
+      "panel": "formal21",
+      "n": 577,
+      "d": 2,
+      "reference_nonnoise_clusters": 3,
+      "adapter_input_csv_sha256": "55c5e7b4e84764f018c500fdcc49c7339add21056e097eac9b195c2c74cb9248",
+      "source": {
+        "description": "Su and Chou fuzzy-clustering benchmark family (2005)",
+        "url": "https://github.com/deric/clustering-benchmark/tree/5a1e33ddf92e9ab6331f0c37c9589b4ff4818925/src/main/resources/datasets/artificial",
+        "identity_status": "family or artifact correspondence; use acquisition notes and archived CSV hash, not the name alone"
+      }
+    },
+    {
+      "dataset": "R15",
+      "panel": "formal21",
+      "n": 600,
+      "d": 2,
+      "reference_nonnoise_clusters": 15,
+      "adapter_input_csv_sha256": "d30bfd31a90143f73dd50e63cff818a11fe2c36d9348d13b3f3131444d2d3987",
+      "source": {
+        "description": "Veenman et al., maximum variance cluster algorithm (2002)",
+        "url": "https://github.com/deric/clustering-benchmark/tree/5a1e33ddf92e9ab6331f0c37c9589b4ff4818925/src/main/resources/datasets/artificial",
+        "identity_status": "family or artifact correspondence; use acquisition notes and archived CSV hash, not the name alone"
+      }
+    },
+    {
+      "dataset": "banana",
+      "panel": "formal21",
+      "n": 4811,
+      "d": 2,
+      "reference_nonnoise_clusters": 2,
+      "adapter_input_csv_sha256": "ee1c5212a5664c6e9d48ba3dd2c1f265c9ecbb9fae0e4c7027bd174a2e883011",
+      "source": {
+        "description": "Immutable ClueMiner banana1 artifact; original generator/authorship unresolved",
+        "url": "https://github.com/deric/clueminer-fixtures/blob/2d694d56f66b53f6182ae8c2461e9df28b60c710/src/main/resources/data/bananas/banana.arff",
+        "identity_status": "family or artifact correspondence; use acquisition notes and archived CSV hash, not the name alone"
+      }
+    },
+    {
+      "dataset": "cluto-t4-8k",
+      "panel": "formal21",
+      "n": 8000,
+      "d": 2,
+      "reference_nonnoise_clusters": 6,
+      "adapter_input_csv_sha256": "14b3920442164b3b7c8214a034a90757b2fb371fe64d5cfc4bcbe596a53608e1",
+      "source": {
+        "description": "CLUTO benchmark family",
+        "url": "https://github.com/deric/clustering-benchmark/tree/5a1e33ddf92e9ab6331f0c37c9589b4ff4818925/src/main/resources/datasets/artificial",
+        "identity_status": "family or artifact correspondence; use acquisition notes and archived CSV hash, not the name alone"
+      }
+    },
+    {
+      "dataset": "cluto-t5-8k",
+      "panel": "formal21",
+      "n": 8000,
+      "d": 2,
+      "reference_nonnoise_clusters": 6,
+      "adapter_input_csv_sha256": "78101009801450253ee319ac64ad414acdfc0d54880fc1b7318019ccc93655b1",
+      "source": {
+        "description": "CLUTO benchmark family",
+        "url": "https://github.com/deric/clustering-benchmark/tree/5a1e33ddf92e9ab6331f0c37c9589b4ff4818925/src/main/resources/datasets/artificial",
+        "identity_status": "family or artifact correspondence; use acquisition notes and archived CSV hash, not the name alone"
+      }
+    },
+    {
+      "dataset": "cure-t2-4k",
+      "panel": "formal21",
+      "n": 4200,
+      "d": 2,
+      "reference_nonnoise_clusters": 6,
+      "adapter_input_csv_sha256": "55f5b6b8e531e26a41abfceae9e0f4302332394b5707ccad1997e68e4ff258bf",
+      "source": {
+        "description": "CURE benchmark and Handl-data-generators type-2 implementation",
+        "url": "https://github.com/deric/clustering-benchmark/blob/5a1e33ddf92e9ab6331f0c37c9589b4ff4818925/src/main/resources/datasets/artificial/cure-t2-4k.arff",
+        "identity_status": "family or artifact correspondence; use acquisition notes and archived CSV hash, not the name alone"
+      }
+    },
+    {
+      "dataset": "diamond9",
+      "panel": "formal21",
+      "n": 3000,
+      "d": 2,
+      "reference_nonnoise_clusters": 9,
+      "adapter_input_csv_sha256": "1f9dcd338d8c49ad9750472ecbaeb7d69ce3a497f30c748aee9d6c6110a12a26",
+      "source": {
+        "description": "Salvador and Chan, determining the number of clusters (2004)",
+        "url": "https://github.com/deric/clustering-benchmark/tree/5a1e33ddf92e9ab6331f0c37c9589b4ff4818925/src/main/resources/datasets/artificial",
+        "identity_status": "family or artifact correspondence; use acquisition notes and archived CSV hash, not the name alone"
+      }
+    },
+    {
+      "dataset": "dpb",
+      "panel": "formal21",
+      "n": 4000,
+      "d": 2,
+      "reference_nonnoise_clusters": 5,
+      "adapter_input_csv_sha256": "111ad08064858a1d0895f71bf63e89c5c7a6c041807051841a38f4d23ca05f5d",
+      "source": {
+        "description": "Rodriguez and Laio, DPC Figure 2B (2014)",
+        "url": "https://github.com/deric/clustering-benchmark/tree/5a1e33ddf92e9ab6331f0c37c9589b4ff4818925/src/main/resources/datasets/artificial",
+        "identity_status": "family or artifact correspondence; use acquisition notes and archived CSV hash, not the name alone"
+      }
+    },
+    {
+      "dataset": "ds2c2sc13",
+      "panel": "formal21",
+      "n": 588,
+      "d": 2,
+      "reference_nonnoise_clusters": 13,
+      "adapter_input_csv_sha256": "a6ac42ce62c9ac7a6d0cc369bedb46d695a89ed6d1577b2b60ca87493b8333d0",
+      "source": {
+        "description": "Faceli et al., partitions benchmark family (2010)",
+        "url": "https://github.com/deric/clustering-benchmark/tree/5a1e33ddf92e9ab6331f0c37c9589b4ff4818925/src/main/resources/datasets/artificial",
+        "identity_status": "family or artifact correspondence; use acquisition notes and archived CSV hash, not the name alone"
+      }
+    },
+    {
+      "dataset": "flame",
+      "panel": "formal21",
+      "n": 240,
+      "d": 2,
+      "reference_nonnoise_clusters": 2,
+      "adapter_input_csv_sha256": "69489598682d18b0c70aaef33b41e197689077bda1200415b72088a0b5687a94",
+      "source": {
+        "description": "Fu and Medico, FLAME (2007)",
+        "url": "https://github.com/deric/clustering-benchmark/tree/5a1e33ddf92e9ab6331f0c37c9589b4ff4818925/src/main/resources/datasets/artificial",
+        "identity_status": "family or artifact correspondence; use acquisition notes and archived CSV hash, not the name alone"
+      }
+    },
+    {
+      "dataset": "fourty",
+      "panel": "formal21",
+      "n": 1000,
+      "d": 2,
+      "reference_nonnoise_clusters": 40,
+      "adapter_input_csv_sha256": "68bb381ad72c82cb86a50cdc334a8081294a46103f9b65dd512ef62ee6008ea8",
+      "source": {
+        "description": "Handl--Knowles / MOCK family",
+        "url": "https://github.com/deric/clustering-benchmark/tree/5a1e33ddf92e9ab6331f0c37c9589b4ff4818925/src/main/resources/datasets/artificial",
+        "identity_status": "family or artifact correspondence; use acquisition notes and archived CSV hash, not the name alone"
+      }
+    },
+    {
+      "dataset": "hypercube",
+      "panel": "formal21",
+      "n": 800,
+      "d": 3,
+      "reference_nonnoise_clusters": 8,
+      "adapter_input_csv_sha256": "17b053bcd3acdec0021037c3e9fd41bf2c5b66b50dbdd541c7b78b08118f0d4d",
+      "source": {
+        "description": "R mlbench generator family",
+        "url": "https://cran.r-project.org/package=mlbench",
+        "identity_status": "family or artifact correspondence; use acquisition notes and archived CSV hash, not the name alone"
+      }
+    },
+    {
+      "dataset": "longsquare",
+      "panel": "formal21",
+      "n": 900,
+      "d": 2,
+      "reference_nonnoise_clusters": 6,
+      "adapter_input_csv_sha256": "ffd4ff41153f4216e5dc633fb45c06fbaa6db983a42035021410bbae97fa16d4",
+      "source": {
+        "description": "Handl--Knowles / MOCK family",
+        "url": "https://github.com/deric/clustering-benchmark/tree/5a1e33ddf92e9ab6331f0c37c9589b4ff4818925/src/main/resources/datasets/artificial",
+        "identity_status": "family or artifact correspondence; use acquisition notes and archived CSV hash, not the name alone"
+      }
+    },
+    {
+      "dataset": "sizes4",
+      "panel": "formal21",
+      "n": 1000,
+      "d": 2,
+      "reference_nonnoise_clusters": 4,
+      "adapter_input_csv_sha256": "12891b16cd832edddc266e246054c5e2e54398c285d22b882bc35376699cabf0",
+      "source": {
+        "description": "Handl--Knowles / MOCK family",
+        "url": "https://github.com/deric/clustering-benchmark/tree/5a1e33ddf92e9ab6331f0c37c9589b4ff4818925/src/main/resources/datasets/artificial",
+        "identity_status": "family or artifact correspondence; use acquisition notes and archived CSV hash, not the name alone"
+      }
+    },
+    {
+      "dataset": "smile1",
+      "panel": "formal21",
+      "n": 1000,
+      "d": 2,
+      "reference_nonnoise_clusters": 4,
+      "adapter_input_csv_sha256": "318065c0d8e25d37bc02102acf9363e80c15c55ade10ca9e6c3063690ab1173e",
+      "source": {
+        "description": "Handl--Knowles / MOCK family",
+        "url": "https://github.com/deric/clustering-benchmark/tree/5a1e33ddf92e9ab6331f0c37c9589b4ff4818925/src/main/resources/datasets/artificial",
+        "identity_status": "family or artifact correspondence; use acquisition notes and archived CSV hash, not the name alone"
+      }
+    },
+    {
+      "dataset": "smile3",
+      "panel": "formal21",
+      "n": 1000,
+      "d": 2,
+      "reference_nonnoise_clusters": 4,
+      "adapter_input_csv_sha256": "367789d7242ccb699ba54014b028a86de58095b0a5201a8d1ffc51e9c460cb31",
+      "source": {
+        "description": "Handl--Knowles / MOCK family",
+        "url": "https://github.com/deric/clustering-benchmark/tree/5a1e33ddf92e9ab6331f0c37c9589b4ff4818925/src/main/resources/datasets/artificial",
+        "identity_status": "family or artifact correspondence; use acquisition notes and archived CSV hash, not the name alone"
+      }
+    },
+    {
+      "dataset": "triangle1",
+      "panel": "formal21",
+      "n": 1000,
+      "d": 2,
+      "reference_nonnoise_clusters": 4,
+      "adapter_input_csv_sha256": "ffda88f3f18a6148398f9e86d55b4e427db3c245d4b4c79a47aeab49a067cbf1",
+      "source": {
+        "description": "Garcia-Piquer et al. (2015), Handl--Knowles generator family",
+        "url": "https://github.com/deric/clustering-benchmark/tree/5a1e33ddf92e9ab6331f0c37c9589b4ff4818925/src/main/resources/datasets/artificial",
+        "identity_status": "family or artifact correspondence; use acquisition notes and archived CSV hash, not the name alone"
+      }
+    },
+    {
+      "dataset": "twenty",
+      "panel": "formal21",
+      "n": 1000,
+      "d": 2,
+      "reference_nonnoise_clusters": 20,
+      "adapter_input_csv_sha256": "48015afa9d770d69d0881f8ce3d38e17ca0f8cd25868629f6ea81df09899fa7c",
+      "source": {
+        "description": "Handl--Knowles / MOCK family",
+        "url": "https://github.com/deric/clustering-benchmark/tree/5a1e33ddf92e9ab6331f0c37c9589b4ff4818925/src/main/resources/datasets/artificial",
+        "identity_status": "family or artifact correspondence; use acquisition notes and archived CSV hash, not the name alone"
+      }
+    },
+    {
+      "dataset": "xclara",
+      "panel": "formal21",
+      "n": 3000,
+      "d": 2,
+      "reference_nonnoise_clusters": 3,
+      "adapter_input_csv_sha256": "7fceaaea00a8bf69148891708f4e23b53dddd8dd9b5fdefa132cf1403b9e6097",
+      "source": {
+        "description": "R cluster data object",
+        "url": "https://cran.r-project.org/package=cluster",
+        "identity_status": "family or artifact correspondence; use acquisition notes and archived CSV hash, not the name alone"
+      }
+    },
+    {
+      "dataset": "zelnik5",
+      "panel": "formal21",
+      "n": 512,
+      "d": 2,
+      "reference_nonnoise_clusters": 4,
+      "adapter_input_csv_sha256": "98eb02763fce74fc84938744b27f341fbd7c4cc3a4c36115e14bfa08d642bcc2",
+      "source": {
+        "description": "Zelnik-Manor and Perona, self-tuning spectral clustering (2004)",
+        "url": "https://github.com/deric/clustering-benchmark/tree/5a1e33ddf92e9ab6331f0c37c9589b4ff4818925/src/main/resources/datasets/artificial",
+        "identity_status": "family or artifact correspondence; use acquisition notes and archived CSV hash, not the name alone"
+      }
+    },
+    {
+      "dataset": "sizes2",
+      "panel": "challenge8",
+      "n": 1000,
+      "d": 2,
+      "reference_nonnoise_clusters": 4,
+      "adapter_input_csv_sha256": "dfc14fec80b08e01c6e980f36882c48cc8ea05d5e4c4721d7c8d56d237e8ca70",
+      "source": {
+        "description": "Handl and Knowles, TR-COMPSYSBIO-2004-02 / MOCK family",
+        "url": "https://github.com/deric/clustering-benchmark/tree/5a1e33ddf92e9ab6331f0c37c9589b4ff4818925/src/main/resources/datasets/artificial",
+        "identity_status": "family or artifact correspondence; use acquisition notes and archived CSV hash, not the name alone"
+      }
+    },
+    {
+      "dataset": "disk-6000n",
+      "panel": "challenge8",
+      "n": 6000,
+      "d": 2,
+      "reference_nonnoise_clusters": 2,
+      "adapter_input_csv_sha256": "3f3b86213c57ca7f4416916df09d9c4c94e5a42e1281f0b599cbe3161acd4b72",
+      "source": {
+        "description": "Immutable Clustering Benchmark disk artifact and generator",
+        "url": "https://github.com/deric/clustering-benchmark/blob/5a1e33ddf92e9ab6331f0c37c9589b4ff4818925/src/main/resources/datasets/artificial/disk-6000n.arff",
+        "identity_status": "family or artifact correspondence; use acquisition notes and archived CSV hash, not the name alone"
+      }
+    },
+    {
+      "dataset": "cluto-t8-8k",
+      "panel": "challenge8",
+      "n": 8000,
+      "d": 2,
+      "reference_nonnoise_clusters": 8,
+      "adapter_input_csv_sha256": "b2bef1ef3e61cb8e6ee996ade3380b65d7767d79349ec5e2f25cee660e6db431",
+      "source": {
+        "description": "CLUTO benchmark family",
+        "url": "https://github.com/deric/clustering-benchmark/tree/5a1e33ddf92e9ab6331f0c37c9589b4ff4818925/src/main/resources/datasets/artificial",
+        "identity_status": "family or artifact correspondence; use acquisition notes and archived CSV hash, not the name alone"
+      }
+    },
+    {
+      "dataset": "bng_mushroom",
+      "panel": "challenge8",
+      "n": 600,
+      "d": 121,
+      "reference_nonnoise_clusters": 2,
+      "adapter_input_csv_sha256": "56f75b06ebbf6c92656d8d80d5b73b377285affa0753adb236b1ee8175616b5a",
+      "source": {
+        "description": "OpenML BNG mushroom",
+        "url": "https://www.openml.org/d/120",
+        "identity_status": "versioned source; frozen 600-row processed sample, not the full OpenML distribution",
+        "data_id": 120,
+        "version": 1
+      }
+    },
+    {
+      "dataset": "bng_segment",
+      "panel": "challenge8",
+      "n": 600,
+      "d": 52,
+      "reference_nonnoise_clusters": 7,
+      "adapter_input_csv_sha256": "7379aa3a85550eb4ec373157d224233dc5fdadd82f586343db8aad62884ac618",
+      "source": {
+        "description": "OpenML BNG segment",
+        "url": "https://www.openml.org/d/130",
+        "identity_status": "versioned source; frozen 600-row processed sample, not the full OpenML distribution",
+        "data_id": 130,
+        "version": 1
+      }
+    },
+    {
+      "dataset": "banknote",
+      "panel": "real10",
+      "n": 1372,
+      "d": 4,
+      "reference_nonnoise_clusters": 2,
+      "adapter_input_csv_sha256": "33d8408ed565bef7563f2c521e948d633e9997a2a850f7b6684cc831667b4e68",
+      "source": {
+        "repository": "UCI",
+        "data_id": 267,
+        "version": null,
+        "file_id": null,
+        "url": "https://doi.org/10.24432/C55P57",
+        "identity_status": "source distribution identified; exact archived numeric-table reconstruction is not certified"
+      }
+    },
+    {
+      "dataset": "cardiotocography",
+      "panel": "real10",
+      "n": 2126,
+      "d": 35,
+      "reference_nonnoise_clusters": 10,
+      "adapter_input_csv_sha256": "6e4f14a4ced00b422cd5492ba2a85765a2888b5275ab0167469757cc6ab97f4e",
+      "source": {
+        "repository": "OpenML",
+        "data_id": 1466,
+        "version": 1,
+        "file_id": 1586231,
+        "url": "https://www.openml.org/d/1466",
+        "identity_status": "source distribution identified; exact archived numeric-table reconstruction is not certified"
+      }
+    },
+    {
+      "dataset": "segmentation",
+      "panel": "real10",
+      "n": 2310,
+      "d": 19,
+      "reference_nonnoise_clusters": 7,
+      "adapter_input_csv_sha256": "c40889f7dc86e59b5001c2845bacd57d598f8db89f6381594123449e4a5e4739",
+      "source": {
+        "repository": "UCI",
+        "data_id": 50,
+        "version": null,
+        "file_id": null,
+        "url": "https://doi.org/10.24432/C5GP4N",
+        "identity_status": "source distribution identified; exact archived numeric-table reconstruction is not certified"
+      }
+    },
+    {
+      "dataset": "solar_flare",
+      "panel": "real10",
+      "n": 1066,
+      "d": 42,
+      "reference_nonnoise_clusters": 6,
+      "adapter_input_csv_sha256": "8ef8ade63064f065af1815606c33a13a95f3b513842a8ea38849d9859902c210",
+      "source": {
+        "repository": "OpenML",
+        "data_id": 40687,
+        "version": 4,
+        "file_id": 4965264,
+        "url": "https://www.openml.org/d/40687",
+        "identity_status": "source distribution identified; exact archived numeric-table reconstruction is not certified"
+      }
+    },
+    {
+      "dataset": "page_blocks",
+      "panel": "real10",
+      "n": 5473,
+      "d": 10,
+      "reference_nonnoise_clusters": 5,
+      "adapter_input_csv_sha256": "3808cb86300c206be85733928347701117972c916bd01cff1bcde7bf516550a1",
+      "source": {
+        "repository": "OpenML",
+        "data_id": 30,
+        "version": 1,
+        "file_id": 30,
+        "url": "https://www.openml.org/d/30",
+        "identity_status": "source distribution identified; exact archived numeric-table reconstruction is not certified"
+      }
+    },
+    {
+      "dataset": "tokyo1",
+      "panel": "real10",
+      "n": 959,
+      "d": 44,
+      "reference_nonnoise_clusters": 2,
+      "adapter_input_csv_sha256": "83d182e76e8c9ed6b58e2b642caf32d5bd27e94226812dd9c09f16953d370455",
+      "source": {
+        "repository": "OpenML",
+        "data_id": 40705,
+        "version": 1,
+        "file_id": 4965306,
+        "url": "https://www.openml.org/d/40705",
+        "identity_status": "source distribution identified; exact archived numeric-table reconstruction is not certified"
+      }
+    },
+    {
+      "dataset": "soybean",
+      "panel": "real10",
+      "n": 683,
+      "d": 133,
+      "reference_nonnoise_clusters": 19,
+      "adapter_input_csv_sha256": "9bd8f40e49e3eeeb32bf2c052bf86d0ddd6a318b951fb8d122834bfea1589c80",
+      "source": {
+        "repository": "OpenML",
+        "data_id": 42,
+        "version": 1,
+        "file_id": 42,
+        "url": "https://www.openml.org/d/42",
+        "identity_status": "source distribution identified; exact archived numeric-table reconstruction is not certified"
+      }
+    },
+    {
+      "dataset": "cpmp_2015_classification",
+      "panel": "real10",
+      "n": 527,
+      "d": 552,
+      "reference_nonnoise_clusters": 4,
+      "adapter_input_csv_sha256": "f02e36999926a25293ddcdb97f212be0b1058b76ceb4035f218e40ee1d160a54",
+      "source": {
+        "repository": "OpenML",
+        "data_id": 41701,
+        "version": 1,
+        "file_id": 21377443,
+        "url": "https://www.openml.org/d/41701",
+        "identity_status": "source distribution identified; exact archived numeric-table reconstruction is not certified"
+      }
+    },
+    {
+      "dataset": "steel_plates_fault",
+      "panel": "real10",
+      "n": 1941,
+      "d": 27,
+      "reference_nonnoise_clusters": 7,
+      "adapter_input_csv_sha256": "c044d6807474997d82d68c57e380cbbea87d8c434dc911b25c6771b2647b9be6",
+      "source": {
+        "repository": "OpenML",
+        "data_id": 40982,
+        "version": 3,
+        "file_id": 18151921,
+        "url": "https://www.openml.org/d/40982",
+        "identity_status": "source distribution identified; exact archived numeric-table reconstruction is not certified"
+      }
+    },
+    {
+      "dataset": "stock",
+      "panel": "real10",
+      "n": 950,
+      "d": 9,
+      "reference_nonnoise_clusters": 2,
+      "adapter_input_csv_sha256": "0555886fd6fd34228fcd9a46c6a5b1d434cead0702a720f5fb058c30412bf3c7",
+      "source": {
+        "repository": "OpenML",
+        "data_id": 841,
+        "version": 2,
+        "file_id": 53375,
+        "url": "https://www.openml.org/d/841",
+        "identity_status": "source distribution identified; exact archived numeric-table reconstruction is not certified"
+      }
+    },
+    {
+      "dataset": "2dnormals",
+      "panel": "challenge8",
+      "n": 1000,
+      "d": 2,
+      "reference_nonnoise_clusters": 2,
+      "adapter_input_csv_sha256": "fbfa68fd89e28f18747007a9533ca7bc247e893a76970b80aa25156ef1f7fe1c",
+      "source": {
+        "description": "R mlbench, set.seed(1234); mlbench.2dnormals(1000)",
+        "url": "https://cran.r-project.org/package=mlbench",
+        "identity_status": "family or artifact correspondence; use acquisition notes and archived CSV hash, not the name alone"
+      }
+    },
+    {
+      "dataset": "aggregation",
+      "panel": "challenge8",
+      "n": 788,
+      "d": 2,
+      "reference_nonnoise_clusters": 7,
+      "adapter_input_csv_sha256": "175db767187e4f3a1a702c0855504a3f9793d64127a11a4aa71017707de20acd",
+      "source": {
+        "description": "Gionis et al., Clustering aggregation (2007)",
+        "url": "https://doi.org/10.1145/1217299.1217303",
+        "identity_status": "family or artifact correspondence; use acquisition notes and archived CSV hash, not the name alone"
+      }
+    },
+    {
+      "dataset": "DS6",
+      "panel": "challenge8",
+      "n": 800,
+      "d": 2,
+      "reference_nonnoise_clusters": 4,
+      "adapter_input_csv_sha256": "757600ba733e4973e922cd90e84741a20b887cf96b81f808b108e2085f8cdf17",
+      "source": {
+        "description": "Immutable 800-by-2 four-label MAT mirror; original generator/authorship unresolved",
+        "url": "https://github.com/milaan9/Clustering-Datasets/blob/c09f0d17b9240900550ec46297d762d176e7908e/02.%20Synthetic/DS6.mat",
+        "identity_status": "family or artifact correspondence; use acquisition notes and archived CSV hash, not the name alone"
+      }
+    }
+  ]
+}

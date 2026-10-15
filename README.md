@@ -19,7 +19,7 @@ uses the PEP 440 version `10.0.65`.
 The public API requires Python 3.10--3.12, NumPy, and scikit-learn.
 
 ```bash
-python -m pip install -e .
+python -m pip install -e ".[test,experiments]"
 python scripts/run_example.py
 python -m unittest discover -v
 ```
@@ -46,7 +46,7 @@ print(model.n_clusters_, model.natural_neighbor_order_)
 | `frozen/` | Checked v10_0.65 reference and preserved v9.5 historical snapshot |
 | `examples/` | Small deterministic input for a complete end-to-end run |
 | `results/` | 29-artificial/10-real six-method records and historical v9.5 tables |
-| `scripts/` | Example, core-generation checks, result validation and historical summaries |
+| `scripts/` | Example, integrity checks, current statistics and a separately labeled historical entry point |
 | `tests/` | Public-API equivalence and table-integrity tests |
 | `docs/` | Implementation map, data provenance, and reproducibility notes |
 
@@ -58,6 +58,15 @@ for SNI-DPC, Gravity, Torque Clustering, LDCC, Gauging-delta and DPC-MFP.
 Run `python scripts/verify_release_results.py` to check coverage, run status
 and metric/count fields. The `page_blocks`/Gauging-delta run timed out; no
 quality metrics are imputed for it.
+
+Run `python scripts/reproduce_current_statistics.py` to reproduce statistics
+from the published scores: the original 21 artificial datasets and ten real
+datasets have separate inferential panels; the eight artificial extensions
+remain descriptive. Outputs go to `outputs/current_statistics/`. See the
+[current statistical protocol](docs/current-statistical-protocol.md) for exact
+two-sided signed-rank tests, panel-specific Holm families, effects and the
+existing non-bootstrap intervals. This command does not rerun clustering or
+recompute metrics from prediction labels.
 
 These are archived experiment records, not a benchmark rerun by this
 repository. Their hashes and reproduction boundaries are described in
@@ -73,7 +82,18 @@ versions, preprocessing and experiment configuration. Only SNI-DPC source is
 distributed here; third-party comparator code and input data without verified
 redistribution terms are not included.
 
-See `docs/data-provenance.md` and `docs/reproducibility.md` for the exact scope.
+Prediction labels, the complete processed-input archive, raw monitoring logs,
+the complete six-method runners/configurations and the full figure-generation
+archive are not released. The [material inventory](docs/release-materials.md)
+distinguishes them from the source code, result fields, example and scripts
+that are included. The [39-input identity manifest](docs/benchmark-input-manifest.json)
+provides source records and archived CSV SHA-256 values without exposing
+private filesystem paths or distributing inputs.
+
+See the [acquisition and preparation guide](docs/acquisition-and-protocol.md),
+[data provenance](docs/data-provenance.md), and
+[reproducibility guide](docs/reproducibility.md) for access steps and the
+remaining requirements for a full benchmark rerun.
 
 ## Citation
 

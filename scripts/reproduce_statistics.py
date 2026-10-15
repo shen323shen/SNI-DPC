@@ -110,8 +110,11 @@ def build_outputs(frame: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input", type=Path, default=DEFAULT_INPUT)
-    parser.add_argument("--output", type=Path, default=ROOT / "results")
+    parser.add_argument("--output", type=Path, default=ROOT / "outputs" / "historical_v9_5")
     args = parser.parse_args()
+
+    print("HISTORICAL v9.5 ONLY: older 21-dataset method combination; one-sided Wilcoxon with SciPy method=auto.")
+    print("For current six-method results use scripts/reproduce_current_statistics.py; see docs/current-statistical-protocol.md.")
 
     frame = pd.read_csv(args.input)
     validate_input(frame)
