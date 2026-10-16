@@ -366,8 +366,9 @@ def adaptive_alpha(i, j, reliability, alpha_min=1.3, alpha_max=2.5):
     """
     自适应距离衰减指数。
 
-    reliability 高：更像核心点，距离惩罚稍弱；
-    reliability 低：更像边界点或噪声点，距离惩罚更强。
+    端点可靠性降低时，alpha 增大。令 b = z_ij + eps：
+    b < 1 时更大的 alpha 放大 b**(-alpha)，b > 1 时使其衰减；
+    b = 1 时该因子不变。完整交互还取决于结构支持和高斯衰减。
     """
     ri = reliability[int(i)]
     rj = reliability[int(j)]
@@ -1254,7 +1255,7 @@ def mng_dpc(data):
 # v10_0.65 overrides; global lookups in mng_dpc resolve these definitions.
 
 def compute_composite_density(data, NN, RNN, M, S, G):
-    """Average the four normalized density views equally."""
+    """Fuse NN/RNN/SNN at 0.35/3 each and the structure-field view at 0.65."""
     n = len(data)
     rho_nn = np.zeros(n, dtype=float)
     rho_rnn = np.zeros(n, dtype=float)
