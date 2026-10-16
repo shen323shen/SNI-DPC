@@ -1,0 +1,85 @@
+{
+  "protocol_version": "seven-methods-2026-10-16",
+  "methods": [
+    "SNI-DPC",
+    "Gravity",
+    "Torque Clustering",
+    "LDCC",
+    "Gauging-delta",
+    "DPC-MFP",
+    "WANN-DPC"
+  ],
+  "metrics": [
+    "NMI",
+    "ACC",
+    "ARI",
+    "Purity"
+  ],
+  "inputs": {
+    "artificial": {
+      "file": "artificial29_seven_method_results.csv",
+      "sha256_canonical_lf": "3dc23057f58ff8e900f11b782d2f58e6b72728cae8c29b451b7635c95de3ef3c"
+    },
+    "real": {
+      "file": "real10_seven_method_results.csv",
+      "sha256_canonical_lf": "01f21c31dd37a9357ce324a45531c39a44999effdfa82344bd275f0aaba9540e"
+    }
+  },
+  "script": {
+    "file": "scripts/reproduce_seven_method_statistics.py",
+    "sha256_canonical_lf": "a7c4f9c2441cca745193342f6458c741ed6e3590f1d0ac9e029a3cc66cb21af8"
+  },
+  "mathematical_dependency": {
+    "file": "scripts/reproduce_current_statistics.py",
+    "sha256_canonical_lf": "9daace81ace033c76fcd4d92da1339eed3a1f82f1b33820f309c4d68f6e1f5f1"
+  },
+  "configuration": {
+    "file": "docs/seven-method-evaluation-config.json",
+    "sha256_canonical_lf": "8fdb475712aaf868ffd3cc1d1981c84450802c93df6cbc12d6af794fb21fb013"
+  },
+  "dataset_identity": {
+    "file": "docs/benchmark-input-manifest.json",
+    "sha256_canonical_lf": "077a8b083d44a5fbdcc953eb5cb249867c51d5a9eec097b7ab1b485b56c44b56"
+  },
+  "environment": {
+    "python": "3.10.19",
+    "numpy": "2.2.5",
+    "pandas": "2.3.3",
+    "scipy": "1.15.3"
+  },
+  "inferential_panels": [
+    "formal21",
+    "real10"
+  ],
+  "descriptive_only": [
+    "challenge8"
+  ],
+  "friedman_complete_blocks": {
+    "formal21": 21,
+    "real10": 9
+  },
+  "friedman_probability": "asymptotic chi-square",
+  "wilcoxon": "two-sided exact conditional sign-permutation; zero tolerance 1e-12; average nonzero tie ranks",
+  "holm_family": "24 hypotheses (4 metrics x 6 comparators), separately in each inferential panel",
+  "interval": "nominal pointwise 95% Walsh-order with exact no-tie critical index; not multiplicity-adjusted or exact tie-adjusted; no bootstrap",
+  "missingness": "retain the registered page_blocks/Gauging-delta timeout; no imputation",
+  "scope": "score-level statistics only; no clustering, prediction-label scoring, or resource rerun",
+  "outputs": {
+    "friedman_seven.csv": {
+      "rows": 8,
+      "sha256_canonical_lf": "46c2264fea06038d73d04a9ab0f76a32ee7a1db0886d31075d81dbb901ff7a6f"
+    },
+    "pairwise_seven.csv": {
+      "rows": 48,
+      "sha256_canonical_lf": "f1b5a232b3e745f7db1e24ee7a4c7267003782a3bec5ce27f70abd95174d0ac8"
+    },
+    "descriptive_seven.csv": {
+      "rows": 84,
+      "sha256_canonical_lf": "2fa36c09694fbdfd98a660d3e65bcb4f59dc5f5763058d0287ed5f1dbb829783"
+    },
+    "paired_differences_seven.csv": {
+      "rows": 740,
+      "sha256_canonical_lf": "a8ef3b3cf1b12c58cb3a2bdc9a853dfd67c7d282c41242173309a0d54d5d816e"
+    }
+  }
+}

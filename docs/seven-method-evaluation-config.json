@@ -1,0 +1,96 @@
+{
+  "protocol_version": "seven-methods-2026-10-16",
+  "method": "SNI-DPC",
+  "input_information": {
+    "SNI-DPC": "features only; no reference count or labels",
+    "WANN-DPC": "same prepared features plus integer non-noise reference count; no reference-label vector"
+  },
+  "snidpc_executed_source_identity": {
+    "effective_method_sha256": "e6b2a173c188b0b17b00f241be5db1d36740885e25bb9ffc1bbefff37e3571b4",
+    "effective_core_sha256": "303e9fedb88122e3a6384522c3c6d2b7a21ee53c372720ff8478b3aeb8e37d71",
+    "identity_scope": "executed common benchmark configuration; not a new algorithm revision"
+  },
+  "snidpc_common_controls": {
+    "density_weights_NN_RNN_SNN_field": [
+      0.11666666666666665,
+      0.11666666666666665,
+      0.11666666666666665,
+      0.65
+    ],
+    "alpha_bounds": [
+      1,
+      2
+    ],
+    "beta_bounds": [
+      1,
+      2
+    ],
+    "layer2_weights": [
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "layer1_layer2_stop": "no membership growth",
+    "epsilon": 1e-12,
+    "natural_stability_rounds": 3,
+    "initial_knn_query": "min(n-1,max(8,floor(4*sqrt(n))))",
+    "positive_reverse_count_percentile": 15,
+    "reverse_branch_protective_cap": 0.3,
+    "interaction_reference_percentile": 30,
+    "scaled_distance_percentiles_mutual_strong": [
+      95,
+      85
+    ],
+    "empty_sample_scaled_distance_fallbacks": [
+      1.8,
+      1.5
+    ],
+    "assembly_gate_percentile": 25,
+    "center_significance_floor": 25,
+    "center_significance_relative_factor": 0.5,
+    "elongated_thinness_max": 0.08,
+    "elongated_size_factor_min": 1.2,
+    "fragment_size_factor_max": 0.45,
+    "parent_size_factor_min": 0.75,
+    "fragment_gap_local_scale_max": 3.5,
+    "fragment_thinness_max": 0.12,
+    "fragment_axis_similarity_min": 0.9
+  },
+  "configuration_history": "initial diamond9 development and first freeze; revision-era sensitivity and external quality informed global revision; one final configuration shared across datasets without dataset-specific parameter selection",
+  "preprocessing": {
+    "artificial": "registered numerical representation; original 21 retain raw coordinate columns",
+    "real": "fixed encoding and missing-value handling; per-feature z-score; constant/nonfinite standardized entries set to zero",
+    "shared_input": "identical prepared features and row order within each dataset",
+    "wann_extra_minmax": false
+  },
+  "evaluation": {
+    "all_rows_fit": true,
+    "reference_noise_label": -1,
+    "quality_and_reference_count": "exclude explicit reference-noise rows",
+    "output_count": "all distinct nonnegative predicted labels over all input rows"
+  },
+  "comparator_calls": {
+    "Gravity": "registered GNaN--DSNGCAP pipeline; no reference count",
+    "Torque Clustering": "TORC(DM,0,0,0); autonomous count",
+    "LDCC": "scale=10 for n<500, otherwise 100; no reference count",
+    "Gauging-delta": "Perception(k=None); no reference count",
+    "DPC-MFP": "fixed public defaults k=42,l=19; no reference count",
+    "WANN-DPC": "integer non-noise reference count; bypass additional internal Min-Max; reference-label-free terminal-cycle safeguard"
+  },
+  "wann_cycle_guard": {
+    "triggered_dataset": "solar_flare",
+    "other_predictions_pointwise_unchanged": 38,
+    "rule": "a repeated unlabelled target inherits the predicted class of the nearest currently labelled sample; propagate to pending chain",
+    "same_adapter_all_39": true,
+    "reference_labels_used": false
+  },
+  "wann_existing_common_settings": {
+    "Correction": 2.5,
+    "NeighborLimit": 30,
+    "neighbor_limit_scope": "retain native data-dependent clipping; no new parameter selection"
+  },
+  "resource_scope": "archived six-method observations plus separately timed single-worker WANN real-data calls; no new resource benchmark",
+  "record_scope": "evaluation controls and input identities; not a complete executable third-party rerun package",
+  "public_input_identity_manifest": "docs/benchmark-input-manifest.json",
+  "algorithm_source_location": "src/sni_dpc/ and frozen/; source/package revision unchanged by statistical release"
+}

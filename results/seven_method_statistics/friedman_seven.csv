@@ -1,0 +1,9 @@
+panel,metric,complete_datasets,methods,friedman_chi_square,friedman_p_asymptotic,kendall_w,sni_mean_rank_common_blocks,calculation
+formal21,NMI,21,7,46.617676266136925,2.2301442386720238e-08,0.36998155766775337,2.6428571428571428,tie-corrected Friedman statistic with asymptotic chi-square probability
+formal21,ACC,21,7,48.576687116564308,9.061409835475802e-09,0.38552926282987549,2.6190476190476191,tie-corrected Friedman statistic with asymptotic chi-square probability
+formal21,ARI,21,7,44.557477110884982,5.7300229656186274e-08,0.35363077072130938,2.7142857142857144,tie-corrected Friedman statistic with asymptotic chi-square probability
+formal21,Purity,21,7,6.9039999999999457,0.3298166067457417,0.05479365079365036,3.5952380952380953,tie-corrected Friedman statistic with asymptotic chi-square probability
+real10,NMI,9,7,29.212723658051683,5.5448586013338165e-05,0.5409763640379941,1.6666666666666667,tie-corrected Friedman statistic with asymptotic chi-square probability
+real10,ACC,9,7,15.662027833001986,0.015687669440582429,0.29003755246299973,2.4444444444444446,tie-corrected Friedman statistic with asymptotic chi-square probability
+real10,ARI,9,7,26.163346613545801,0.00020757003466277048,0.48450641876936668,2,tie-corrected Friedman statistic with asymptotic chi-square probability
+real10,Purity,9,7,34.658682634730518,5.0178441777330072e-06,0.64182745619871329,2.9444444444444446,tie-corrected Friedman statistic with asymptotic chi-square probability

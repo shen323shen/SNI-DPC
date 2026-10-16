@@ -45,12 +45,38 @@ print(model.n_clusters_, model.natural_neighbor_order_)
 | `src/sni_dpc/` | Public API and self-contained v10_0.65 computational core |
 | `frozen/` | Checked v10_0.65 reference and preserved v9.5 historical snapshot |
 | `examples/` | Small deterministic input for a complete end-to-end run |
-| `results/` | 29-artificial/10-real six-method records and historical v9.5 tables |
+| `results/` | Current seven-method inputs/statistics, preserved six-method records and earlier historical tables |
 | `scripts/` | Example, integrity checks, current statistics and a separately labeled historical entry point |
 | `tests/` | Public-API equivalence and table-integrity tests |
 | `docs/` | Implementation map, data provenance, and reproducibility notes |
 
 ## Current result records
+
+The seven-method comparison adds **WANN-DPC as a known-count control** to
+SNI-DPC, Gravity, Torque Clustering, LDCC, Gauging-delta and DPC-MFP.
+`results/artificial29_seven_method_results.csv` and
+`results/real10_seven_method_results.csv` contain 273 records: 272 successes
+and the retained `page_blocks`/Gauging-delta timeout. Only WANN-DPC receives
+the integer non-noise reference count. It uses the common prepared features
+without an additional internal Min-Max transformation and the documented
+reference-label-free cycle safeguard.
+
+The complete corrected paired tests, effects, nominal intervals, omnibus
+results, configuration record and code fingerprints are directly available
+under [`results/seven_method_statistics/`](results/seven_method_statistics/).
+See the [seven-method protocol](docs/seven-method-statistical-protocol.md)
+and [evaluation configuration](docs/seven-method-evaluation-config.json).
+
+```bash
+python scripts/reproduce_seven_method_statistics.py
+```
+
+Protocol `seven-methods-2026-10-16` keeps the original 21 artificial and ten
+real datasets as separate inferential panels, with 24 panel-wide Holm tests
+each; the eight additional artificial datasets remain descriptive. This is
+statistics from archived scores, not a clustering or resource rerun.
+
+### Preserved six-method first-revision records
 
 `results/artificial29_six_method_results.csv` and
 `results/real10_six_method_results.csv` record one row per dataset and method
@@ -59,11 +85,11 @@ Run `python scripts/verify_release_results.py` to check coverage, run status
 and metric/count fields. The `page_blocks`/Gauging-delta run timed out; no
 quality metrics are imputed for it.
 
-Run `python scripts/reproduce_current_statistics.py` to reproduce statistics
+Run `python scripts/reproduce_current_statistics.py` to reproduce six-method statistics
 from the published scores: the original 21 artificial datasets and ten real
 datasets have separate inferential panels; the eight artificial extensions
 remain descriptive. Outputs go to `outputs/current_statistics/`. See the
-[current statistical protocol](docs/current-statistical-protocol.md) for exact
+[preserved six-method protocol](docs/current-statistical-protocol.md) for exact
 two-sided signed-rank tests, panel-specific Holm families, effects and the
 existing non-bootstrap intervals. This command does not rerun clustering or
 recompute metrics from prediction labels.
@@ -72,7 +98,7 @@ These are archived experiment records, not a benchmark rerun by this
 repository. Their hashes and reproduction boundaries are described in
 `checksums.sha256` and `docs/reproducibility.md`. The former 21-dataset table
 and `scripts/reproduce_statistics.py` remain available as **v9.5 history**;
-they do not describe the current six-method comparison.
+they describe neither the preserved six-method nor the current seven-method comparison.
 
 ## Reproducibility boundaries
 
@@ -83,7 +109,7 @@ distributed here; third-party comparator code and input data without verified
 redistribution terms are not included.
 
 Prediction labels, the complete processed-input archive, raw monitoring logs,
-the complete six-method runners/configurations and the full figure-generation
+the complete executable comparator runners and the full figure-generation
 archive are not released. The [material inventory](docs/release-materials.md)
 distinguishes them from the source code, result fields, example and scripts
 that are included. The [39-input identity manifest](docs/benchmark-input-manifest.json)

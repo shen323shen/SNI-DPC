@@ -1,24 +1,28 @@
 # Released materials and access scope
 
-Inventory date: 15 October 2026. The algorithm is SNI-DPC `v10_0.65`, package
-`10.0.65`. Current statistics use protocol `current-six-methods-2026-10-15`.
+Inventory date: 16 October 2026. The algorithm is SNI-DPC `v10_0.65`, package
+`10.0.65`, unchanged by this statistical release. Current statistics use
+`seven-methods-2026-10-16`; the earlier six-method protocol is preserved.
 Use a Git commit to identify the repository snapshot; these are distinct
 version identifiers, not a new algorithm release.
 
 | Material | In this repository | What the release supports |
 |---|---|---|
 | SNI-DPC source and fixed internal settings | Yes: `src/sni_dpc/`, `frozen/` | Run the method and compare the public estimator with the checked reference |
-| Current dataset-level score/count results | Yes: `results/artificial29_six_method_results.csv`, `results/real10_six_method_results.csv` | Inspect 234 dataset-method records, including 233 successes and one timeout |
-| Runtime and peak-RSS measurements | Fields in the two current result tables | Inspect archived measurements; raw monitoring logs are not included |
-| Current statistical reproduction | Yes: `scripts/reproduce_current_statistics.py` and `docs/current-statistical-protocol.md` | Recompute panel summaries, Friedman tests, exact paired tests, Holm adjustments, effects and the existing Walsh intervals from published scores |
+| Current seven-method score/count results | Yes: `results/artificial29_seven_method_results.csv`, `results/real10_seven_method_results.csv` | Inspect 273 dataset-method records, including 272 successes and one timeout; WANN-DPC is a known-count control |
+| Runtime and peak-RSS observations | Fields in the result tables, with resource-scope notes | Inspect archived six-method observations and independent WANN real-data timings; unmeasured fields remain empty |
+| Current statistical reproduction | Yes: `scripts/reproduce_seven_method_statistics.py` and `docs/seven-method-statistical-protocol.md` | Recompute panel summaries, Friedman tests, 24-test-per-panel Holm adjustments, paired effects and nominal Walsh intervals |
+| Complete current statistical tables | Yes: `results/seven_method_statistics/` | Directly access 48 paired tests, 740 metric differences, 8 omnibus results, 84 descriptions and checksummed metadata |
+| Evaluation/configuration record | Yes: `docs/seven-method-evaluation-config.json` | Inspect information supplied, common SNI-DPC controls, prepared-input rules, WANN adaptation and executed-source fingerprints; not a complete third-party runner |
+| Preserved six-method first-revision records | Original two six-method CSVs, `scripts/reproduce_current_statistics.py` and its protocol | Reproduce the unchanged 20-test-per-panel analysis separately from the current seven-method release |
 | Prediction labels for the 39-dataset comparison | No | Scores cannot be recomputed from predictions using this release alone |
 | Complete processed benchmark inputs | No | Sources and archived input identities are documented, not a bundled input archive |
 | Dataset identity manifest | Yes: `docs/benchmark-input-manifest.json` | Inspect 39 names, panels, sizes, dimensions, reference counts, source records and archived CSV SHA-256 values |
 | Acquisition and preprocessing instructions | Yes: `docs/data-provenance.md`, `docs/acquisition-and-protocol.md` | Locate upstream distributions and follow the recorded preparation/evaluation rules; unresolved historical encoding/sample details remain identified |
-| Complete six-method runners/configurations | No | Documented method calls and settings are provided, but the complete executable benchmark workflow is not bundled |
+| Complete executable comparator runners | No | Documented method calls and common settings are provided, but the complete executable benchmark workflow is not bundled |
 | Third-party method implementations | No | Obtain separately from the cited upstream repositories or publication records; check their licenses and runtime requirements |
 | Complete figure-generation materials | No | The illustrative example is runnable; the complete manuscript plotting archive is not included |
-| Historical v9.5 scores and statistical script | Yes, explicitly historical | Reproduce only the older 21-dataset method combination, not the current six-method analysis |
+| Historical v9.5 scores and statistical script | Yes, explicitly historical | Reproduce only the older 21-dataset method combination, not the current seven-method analysis |
 | Small end-to-end example | Yes: `examples/data/worked_example_28.csv` and `scripts/run_example.py` | Run the 28-point example without any benchmark dataset download |
 
 ## What can be reproduced directly
@@ -32,11 +36,13 @@ python scripts/run_example.py
 python -m unittest discover -v
 python scripts/verify_checksums.py
 python scripts/verify_release_results.py
+python scripts/reproduce_seven_method_statistics.py
+# Preserved six-method first-revision statistics:
 python scripts/reproduce_current_statistics.py
 ```
 
-Generated statistical files are written to the ignored
-`outputs/current_statistics/`, not over the frozen result tables. No labels,
+Generated files go to the ignored `outputs/seven_method_statistics/` or
+`outputs/current_statistics/`, not over the checked-in result tables. No labels,
 input data, or clustering runs are needed for this score-level reproduction.
 
 ## Full benchmark reruns

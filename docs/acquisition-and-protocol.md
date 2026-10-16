@@ -2,7 +2,9 @@
 
 This guide separates upstream acquisition, preparation rules and the archived
 numeric inputs. It documents the current 29-artificial/10-real comparison;
-it is not a complete executable six-method benchmark runner.
+it is not a complete executable comparator benchmark runner. The current
+seven-method statistical release is specified in
+[the seven-method protocol](seven-method-statistical-protocol.md).
 
 ## 1. Locate the correct source distribution
 
@@ -35,9 +37,11 @@ remain qualified rather than represented as exact reconstructions.
 ## 2. Preparation and label isolation
 
 The archived numeric format has `d` feature columns followed by one reference
-label column. Separate the label column **before** fitting; neither reference
-labels nor the reference cluster count enter any of the six evaluated calls.
-Preserve sample order and keep evaluation labels aligned outside the method.
+label column. Separate the label column **before** fitting. The original six
+calls receive neither reference labels nor the reference count. The added
+WANN-DPC control receives only the integer number of non-noise reference
+classes, not the label vector. Preserve sample order and keep evaluation
+labels aligned outside each method.
 
 - The original 21 artificial inputs retain their numerical coordinates;
   `hypercube` uses all three dimensions.
@@ -50,7 +54,9 @@ Preserve sample order and keep evaluation labels aligned outside the method.
   columns/non-finite standardized results become zero. The full historical
   category order and sample-level transformation manifests are not released;
   applying these broad rules does not certify byte-identical inputs.
-- Algorithm-internal normalization remains part of each implementation.
+- Original six-method internal normalization remains part of each implementation.
+  WANN-DPC uses the same prepared matrix without an additional internal
+  Min-Max step; its registered no-reference-label cycle safeguard is retained.
   PCA belongs to the separately controlled dimension experiments and is not
   applied silently to the native-dimension ten-real benchmark.
 
@@ -66,7 +72,7 @@ licenses and runtime requirements. The upstream links below are acquisition
 pointers, not an assertion that current upstream HEAD equals the executed
 snapshot or that this release contains the frozen adapters.
 
-| Method | Access pointer | Recorded no-reference-count call/settings |
+| Method | Access pointer | Recorded call/settings and reference-count access |
 |---|---|---|
 | SNI-DPC | This repository | `SNIDPC().fit(X)`; one common fixed internal configuration |
 | Gravity | GNaN [publication](https://doi.org/10.1016/j.patcog.2023.110063) and DSNGCAP [publication](https://doi.org/10.1016/j.asoc.2022.109647), including their linked implementation/supplementary records | Evaluated GNaN--DSNGCAP pipeline, not a separately bundled clustering package; its exact adapter is absent |
@@ -74,6 +80,7 @@ snapshot or that this release contains the frozen adapters.
 | LDCC | [Publication record](https://doi.org/10.1016/j.patcog.2026.113065), with the authors' implementation/access information | Label-free adapter to published functions; `scale=10` for `n<500`, otherwise `100`; exact adapter not bundled |
 | Gauging-delta | [Upstream repository](https://github.com/design-zeng/Gauging-delta) | Python `Perception(k=None)`; stop when no further merge occurs |
 | DPC-MFP | [Upstream repository](https://github.com/Ancirled/DPC-MFP) | MATLAB/P-code `featureSelect.p`; common fixed defaults `k=42`, `l=19`; no reference count supplied |
+| WANN-DPC | [Publication record](https://doi.org/10.1016/j.patcog.2025.111953) and its implementation/access records | Integer non-noise reference count supplied; Correction=2.5, NeighborLimit=30 with native data-dependent cap; no additional Min-Max; registered terminal-cycle safeguard |
 
 Verify runtime compatibility, entry-point signatures and licenses after
 acquisition. Keep MATLAB method paths isolated; one method's `normalize`
@@ -96,7 +103,12 @@ Each current method/dataset cell is one recorded call. Readable execution
 paths do not use active algorithmic random sampling. The opaque Torque MEX
 and DPC-MFP P-code had a separate ten-MATLAB-RNG-state check on one fixed
 input; this was not a ten-repeat performance benchmark for every dataset.
-The current statistical script treats datasets, not RNG states, as pairs.
+The statistical scripts treat datasets, not RNG states, as pairs. WANN's
+cycle safeguard is triggered on `solar_flare`; the other 38 predictions
+remain pointwise unchanged under the same adapter. Its real-data resource
+records come from independently timed single-worker calls, not a same-batch
+seven-method rerun. The common configuration and source identities are in
+[the evaluation record](seven-method-evaluation-config.json).
 
 Recorded study environment: Windows 11 x64, Ryzen 9 7945HX (16 physical cores,
 32 logical processors), 47.69 GB visible memory, Python 3.10.19 and MATLAB
@@ -114,4 +126,6 @@ dimensionality or noise tracks must not be inferred for these benchmark rows.
 
 For what can be run directly from this repository, see
 [Released materials](release-materials.md) and
-[Current statistical protocol](current-statistical-protocol.md).
+[Current seven-method statistical protocol](seven-method-statistical-protocol.md).
+The [six-method first-revision protocol](current-statistical-protocol.md)
+and original scripts remain available with their own version identifiers.
